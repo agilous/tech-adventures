@@ -1,0 +1,13 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  min_messages: 'warning'
+  encoding: utf8
+
+development:
+  <<: *default
+  database: tech_adventurer_development
+
+test:
+  <<: *default
+  database: tech_adventurer_test
