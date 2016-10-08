@@ -5,7 +5,7 @@ RSpec.describe MeetingsController, type: :controller do
     let!(:meeting) { create(:meeting) }
 
     it "assigns @meeting" do
-      get :show, id: meeting.id
+      get :show, params: { id: meeting.id }
       expect(assigns(:meeting)).to eq(meeting)
     end
   end
