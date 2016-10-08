@@ -1,9 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Adventurer, type: :model do
-  let(:adventurer) { Adventurer.new }
+  let(:adventurer) { build(:adventurer) }
+
   it "requires a name" do
-    expect(adventurer.valid?).to be_falsy
+    adventurer.name = nil
+    expect(adventurer.valid?).to be false
     expect(adventurer.errors.messages[:name]).to eq(["can't be blank"])
   end
 end
